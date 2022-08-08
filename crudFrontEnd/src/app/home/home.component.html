@@ -1,0 +1,27 @@
+<section class="dashBoard">
+
+    <form [formGroup]="crudForm" (ngSubmit)="subCrudForm(crudForm)" class="container py-5">
+        <div class="alert alert-dismissible alert-success text-center" *ngIf="isAdd">
+            <strong>Add product success</strong>
+        </div>
+        <div class="mb-3">
+            <label for="productName">productName</label>
+            <input type="text" formControlName="productName" class="form-control" id="productName">
+        </div>
+        <div class="mb-3">
+            <label for="productPrice">productPrice</label>
+            <input type="number" formControlName="productPrice" class="form-control" id="productPrice">
+        </div>
+        <div class="mb-3">
+            <label for="productCatgory">productCatgory</label>
+            <input type="text" formControlName="productCategory" class="form-control" id="productCatgory">
+        </div>
+        <div class="mb-3">
+            <label for="productDesc">productDescription</label>
+            <textarea type="text" formControlName="productDesc" class="form-control" id="productDesc"></textarea>
+        </div>
+
+        <button [disabled]="crudForm.invalid" type="submit" class="btn btn-info">Add Product</button>
+    </form>
+
+</section>
